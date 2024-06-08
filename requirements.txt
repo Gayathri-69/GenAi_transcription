@@ -1,6 +1,7 @@
 googletrans==4.0.0-rc1   #Language translator
 pyttsx3 # Text to speech conversion library in python
-streamlit
+streamlit==1.35.0
 espeak
+pillow
 google-generativeai  
 #pip install -r requirements.txt ===>all the dependencies will install
