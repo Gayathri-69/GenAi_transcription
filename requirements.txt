@@ -1,0 +1,4 @@
+googletrans==4.0.0-rc1   #Language translator
+pyttsx3 # Text to speech conversion library in python
+streamlit
+#pip install -r requirements.txt ===>all the dependencies will install
