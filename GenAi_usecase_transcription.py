@@ -44,11 +44,6 @@ else:
     if not user_prompt:
         st.write("Please enter a prompt.")
 
-voice_choice = st.selectbox("Choose a voice:", ["None", "Male", "Female"])
-if voice_choice != "None":
-    generate_audio(0 if voice_choice == "Male" else 1)
-    st.audio("1.mp3", format='audio/mp3')
-
 lang_choice = st.selectbox("Choose a Language to Translate:", ["None", "English", "Hindi", "Odia", "Telugu", "Tamil", "Punjabi", "Malayalam", "Marathi"])
 if lang_choice != "None":
     lang_code = {'English': 'en', 'Hindi': 'hi', 'Odia': 'or', 'Telugu': 'te', 'Tamil': 'ta', 'Punjabi': 'pa', 'Malayalam': 'ml', 'Marathi': 'mr'}[lang_choice]
