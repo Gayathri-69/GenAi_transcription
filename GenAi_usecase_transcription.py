@@ -5,11 +5,11 @@ import pyttsx3
 from googletrans import Translator
 
 # Streamlit app
-st.title("AI Image Description & Translation")
+st.title( "Image Description & Translation Using AI")
 st.write("Upload an image and enter a prompt. The model will generate a description based on your prompt.")
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
-user_prompt = st.text_input("Enter your prompt:", value="")
+user_prompt = st.text_input("Enter any Query about the Image:", value="")
 
 def generate_audio(i):
     audio = pyttsx3.init()
@@ -44,7 +44,12 @@ else:
     if not user_prompt:
         st.write("Please enter a prompt.")
 
-lang_choice = st.selectbox("Choose a Language to Translate:", ["None", "English", "Hindi", "Odia", "Telugu", "Tamil", "Punjabi", "Malayalam", "Marathi"])
+voice_choice = st.selectbox("You can listen to the text:", ["None", "Male", "Female"])
+if voice_choice != "None":
+    generate_audio(0 if voice_choice == "Male" else 1)
+    st.audio("1.mp3", format='audio/mp3')
+
+lang_choice = st.selectbox("Translate to any language:", ["None", "English", "Hindi", "Odia", "Telugu", "Tamil", "Punjabi", "Malayalam", "Marathi"])
 if lang_choice != "None":
     lang_code = {'English': 'en', 'Hindi': 'hi', 'Odia': 'or', 'Telugu': 'te', 'Tamil': 'ta', 'Punjabi': 'pa', 'Malayalam': 'ml', 'Marathi': 'mr'}[lang_choice]
     translated_text = change_language(lang_code)
